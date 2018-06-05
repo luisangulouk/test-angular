@@ -1,0 +1,44 @@
+<div class="row" *ngIf="profileRcvr">
+    <div class="col-lg-10">
+        <h4>{{profileRcvr.first_name}} {{profileRcvr.last_name}}</h4>
+        <p *ngIf="profileRcvr.country_name">{{profileRcvr.country_name}}</p>
+        <form [formGroup]="profileGroup" autocomplete="off" (ngSubmit)="submit()">
+            <div class="form_group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" class="form-control" formControlName="first_name" [(ngModel)]="profileRcvr.first_name">
+            </div>
+            <div class="form_group">
+                <label for="first_name">Last Name</label>
+                <input type="text" id="last_name" class="form-control" formControlName="last_name" [(ngModel)]="profileRcvr.last_name">
+            </div>
+            
+            <div class="form_group">
+                <label for="first_name">Country</label>
+                <input type="text" id="country_name" class="form-control" formControlName="country_name" [(ngModel)]="profileRcvr.country_name">
+            </div>
+            <div class="form_group">
+                <label for="first_name">Language</label>
+                <input type="text" id="language" class="form-control" formControlName="language" [(ngModel)]="profileRcvr.language">
+            </div>
+            <div class="form_group">
+                <label for="first_name">Profile Sub Title</label>
+                <input type="text" id="profile_sub_title" class="form-control" formControlName="profile_sub_title" [(ngModel)]="profileRcvr.profile_sub_title">
+            </div>
+            <div class="form_group">
+                <label for="first_name">Profile Title</label>
+                <input type="text" id="profile_title" class="form-control" formControlName="profile_title" [(ngModel)]="profileRcvr.profile_title">
+            </div>
+            <div class="form_group">
+                <label for="first_name">Summary</label>
+                <textarea id="summary" class="form-control" formControlName="summary" [(ngModel)]="profileRcvr.summary"></textarea>
+            </div>
+
+            <div class="form_group">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Save</button>
+                <button class="btn btn-outline-secondary my-2 my-sm-0" (click)="closeView()">Close</button>
+            </div>
+            <div class="alert alert-success" role="alert" *ngIf="formStatus">{{formStatus}}</div>
+        </form>
+    </div>
+</div>
+<div *ngIf="!profileRcvr">Oops something went wrong!</div>

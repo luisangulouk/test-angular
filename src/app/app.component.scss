@@ -1,0 +1,39 @@
+.profile-item .card {
+    width:250px;
+    margin-top:10px;
+}
+
+.page-bar ul {
+    text-align: center;
+    li {
+        display:inline-block;
+        padding:5px;
+        margin-right: 5px;
+    }
+
+}
+
+.sidebar{
+    padding: 10px 2px;
+    button, input {
+        margin:0 0 5px 5px;
+        display:block;
+    }
+    h4 {
+        padding: 10px 0 5px 5px;
+    }
+    .input-wrapper {
+        margin:0 0 5px 5px;
+        padding:5px 0;
+        display:block;
+        input[type="checkbox"] {
+            display: inline-block;
+        }
+        label {
+            display: inline-block;
+        }
+        .form-check-input {
+            position: inherit;
+        }
+    }
+}
